@@ -27,7 +27,12 @@
 
 ## 📁 项目目录结构
 
-short-link-system ├── README.md ├── .gitignore ├── backend                 # SpringBoot 后端代码 │   ├── pom.xml │   └── src │       └── main │           ├── java        # Java 业务代码 │           └── resources │               ├── application.yml      # 公共配置模板（无真实密码） │               └── application-local.yml# 本地私有配置（git 忽略，存放数据库密码） ├── frontend                # Vue 前端代码 │   ├── package.json │   └── src └── sql └── short_url.sql       # MySQL 建表脚本
+short-link-generation-system 
+├── README.md 
+├── .gitignore 
+├── backend                 # SpringBoot 后端代码 
+   ├── pom.xml │   └── src │       └── main │           ├── java        # Java 业务代码 │           └── resources │               ├── application.yml      # 公共配置模板（无真实密码） │               └── application-local.yml# 本地私有配置（git 忽略，存放数据库密码） 
+├── frontend                # Vue 前端代码 │   
 
 ## 🚀 本地环境启动指南
 ### 前置环境准备
