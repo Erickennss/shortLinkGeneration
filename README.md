@@ -26,6 +26,7 @@
 - Vite
 
 ## 📁 项目目录结构
+```
 shortlink-project
 ├── README.md
 ├── .gitignore
@@ -39,7 +40,8 @@ shortlink-project
 │               └── application-local.yml# 本地私有配置（git 忽略，存放数据库密码）
 └── short-link-admin        # Vue 前端代码
 ├── package.json
-└── src 
+└── src
+```
 
 ## 🚀 本地环境启动指南
 ### 前置环境准备
