@@ -26,11 +26,10 @@
 - Vite
 
 ## 📁 项目目录结构
-
-short-link-generation-system
+shortlink-project
 ├── README.md
 ├── .gitignore
-├── backend                 # SpringBoot 后端代码
+├── shortLinkGeneration     # SpringBoot 后端代码
 │   ├── pom.xml
 │   └── src
 │       └── main
@@ -38,7 +37,9 @@ short-link-generation-system
 │           └── resources
 │               ├── application.yml      # 公共配置模板（无真实密码）
 │               └── application-local.yml# 本地私有配置（git 忽略，存放数据库密码）
-└── frontend                # Vue 前端代码 
+└── short-link-admin        # Vue 前端代码
+├── package.json
+└── src 
 
 ## 🚀 本地环境启动指南
 ### 前置环境准备
