@@ -26,14 +26,6 @@
 - Vite
 
 ## 📁 项目目录结构
-<<<<<<< HEAD
-
-short-link-generation-system
-├── README.md
-├── .gitignore
-├── backend                 # SpringBoot 后端代码
-=======
-```
 shortlink-project
 ├── README.md
 ├── .gitignore
