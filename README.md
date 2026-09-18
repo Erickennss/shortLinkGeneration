@@ -41,42 +41,6 @@ shortlink-project
 └── short-link-admin        # Vue 前端代码
 ```
 
-## 🚀 本地环境启动指南
-### 前置环境准备
-- JDK 17
-- MySQL 8.0+
-- Redis（Windows推荐Memurai）
-- Node.js 18+
-
-### 1. 数据库初始化
-1. 新建数据库 `short_url`
-2. 执行 `sql/short_url.sql` 脚本完成建表
-
-### 2. 后端启动步骤
-1. 进入 `backend/src/main/resources` 目录
-2. 创建 `application-local.yml`，填写本地MySQL密码（示例如下）
-```yaml
-spring:
-  datasource:
-    password: 你的本地MySQL密码
-```
-
-1. 启动后端主类 `ShortLinkGenerationApplication`，默认端口 **8080**
-2. 访问 Swagger 接口文档：`http://localhost:8080/swagger-ui/index.html`
-
-### 3. 前端启动步骤
-
-```
-# 进入前端项目目录
-cd frontend
-# 安装依赖
-npm install
-# 启动开发服务
-npm run dev
-```
-
-前端访问地址：`http://localhost:5173`
-
 ## 📖 核心业务流程
 
 1. 用户在 Vue 前端页面输入长链接，前端通过 Axios 调用后端接口生成短码，短链映射存入 MySQL。
@@ -91,8 +55,7 @@ npm run dev
 6. 浏览器收到 302 重定向，自动发起新请求访问第三方目标网站，完成页面跳转。
 
 
-✨ 更新日志 V0.2（本次迭代重点）
-V0.2 为重大功能更新版本，新增完整的「短链访问统计可视化模块」
+✨ 更新日志 V0.2
 - ✅ 新增短链访问日志异步记录（@Async 异步落库，不阻塞重定向主流程）
 - ✅ 完整多维度访问统计功能：PV总访问量、UV独立访客（IP去重）
 - ✅ 时间趋势可视化：按天访问折线图
@@ -127,7 +90,7 @@ V0.2 高级统计功能（新版核心亮点）
 - 短链主表
 - 访问日志明细表（V0.2 新增）
 3. 后端启动
-在 application-local.yml 配置自己的数据库密码，启动主类即可。
+在 application.yml 配置自己的数据库密码，启动后端主类 `ShortLinkGenerationApplication`，默认端口 **8080**。
 接口文档地址：http://localhost:8080/swagger-ui/index.html
 4. 前端启动
 cd short-link-admin
