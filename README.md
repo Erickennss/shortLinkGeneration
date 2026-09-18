@@ -93,9 +93,11 @@ V0.2 高级统计功能（新版核心亮点）
 在 application.yml 配置自己的数据库密码，启动后端主类 `ShortLinkGenerationApplication`，默认端口 **8080**。
 接口文档地址：http://localhost:8080/swagger-ui/index.html
 4. 前端启动
-cd short-link-admin
-npm install
-npm run dev
+  ```
+   cd short-link-admin
+   npm install
+   npm run dev
+  ```
 
 
 📄 版本说明
