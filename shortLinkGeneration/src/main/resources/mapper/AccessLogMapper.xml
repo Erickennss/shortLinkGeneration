@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shortlinkgeneration.mapper.AccessLogMapper">
+
+    <!-- 总PV -->
+    <select id="selectTotalPvByShortCode" resultType="java.lang.Long">
+        SELECT COUNT(*)
+        FROM short_url_access_log
+        WHERE short_code = #{shortCode}
+    </select>
+
+    <!-- 总UV（按IP去重） -->
+    <select id="selectTotalUvByShortCode" resultType="java.lang.Long">
+        SELECT COUNT(DISTINCT ip)
+        FROM short_url_access_log
+        WHERE short_code = #{shortCode}
+    </select>
+
+    <!-- 按天时间分布 -->
+    <select id="selectTimeDistribution" resultType="map">
+        SELECT
+            DATE_FORMAT(access_time, '%Y-%m-%d') AS date,
+            COUNT(*) AS pv
+        FROM short_url_access_log
+        WHERE short_code = #{shortCode}
+        GROUP BY DATE_FORMAT(access_time, '%Y-%m-%d')
+        ORDER BY date ASC
+    </select>
+
+    <!-- 来源分布 -->
+    <select id="selectSourceDistribution" resultType="map">
+        SELECT
+            IFNULL(referer, '直接访问') AS referer,
+            COUNT(*) AS pv
+        FROM short_url_access_log
+        WHERE short_code = #{shortCode}
+        GROUP BY referer
+        ORDER BY pv DESC
+    </select>
+
+    <!-- 设备分布 -->
+    <select id="selectDeviceDistribution" resultType="map">
+        SELECT
+            IFNULL(device, '未知设备') AS device,
+            COUNT(*) AS pv
+        FROM short_url_access_log
+        WHERE short_code = #{shortCode}
+        GROUP BY device
+        ORDER BY pv DESC
+    </select>
+
+</mapper>

@@ -1,12 +1,13 @@
 server:
   port: 8080
+  address: 0.0.0.0
 
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/short_url?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai
     username: root
-    password: # 本地密码配置在application-local.yml 文件中
+    password: 123456
 
   data:
     redis:
@@ -23,6 +24,7 @@ short:
 
 # MyBatis‑Plus配置
 mybatis-plus:
+  mapper-locations: classpath*:/mapper/**/*.xml
   configuration:
     map-underscore-to-camel-case: true
   global-config:
