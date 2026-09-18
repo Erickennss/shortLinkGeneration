@@ -26,11 +26,19 @@
 - Vite
 
 ## 📁 项目目录结构
+<<<<<<< HEAD
 
 short-link-generation-system
 ├── README.md
 ├── .gitignore
 ├── backend                 # SpringBoot 后端代码
+=======
+```
+shortlink-project
+├── README.md
+├── .gitignore
+├── shortLinkGeneration     # SpringBoot 后端代码
+>>>>>>> 3e9f953f37ddcd282e053e11c6fe9a48bddf4407
 │   ├── pom.xml
 │   └── src
 │       └── main
@@ -38,7 +46,14 @@ short-link-generation-system
 │           └── resources
 │               ├── application.yml      # 公共配置模板（无真实密码）
 │               └── application-local.yml# 本地私有配置（git 忽略，存放数据库密码）
+<<<<<<< HEAD
 └── frontend                # Vue 前端代码
+=======
+└── short-link-admin        # Vue 前端代码
+├── package.json
+└── src
+```
+>>>>>>> 3e9f953f37ddcd282e053e11c6fe9a48bddf4407
 
 ## 🚀 本地环境启动指南
 ### 前置环境准备
@@ -93,10 +108,3 @@ npm run dev
 
 - 敏感数据库密码放置在 `application-local.yml`，该文件已经配置在 `.gitignore`，不会提交到代码仓库，避免密钥泄露。
 - 本项目为演示 Demo，不建议直接部署到生产环境使用。
-
-```
-### 使用操作
-1. 在GitHub仓库根目录新建文件，文件名填写：`README.md`
-2. 把上面全部内容一次性粘贴进去，保存。
-3. 把sql文件夹、short_url.sql建表脚本一并上传到仓库。
-```
